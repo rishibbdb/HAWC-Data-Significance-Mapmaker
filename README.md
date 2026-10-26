@@ -14,6 +14,17 @@ cd /Users/rishi/Documents/Analysis/Sources/website/hawc/hawc_sigfluxmap
 
 ## Run directly (same options as `aerie-apps-HealpixSigFluxMap`)
 
+To convert the hd5 files to fits format to create the significance maps, use the `fits-to-hdf5.py` script. 
+
+```bash
+python fits-to-hdf5.py hdf5 \
+    --filename modelMap.hd5 \
+    -o ./model \
+    --data-dir /path/to/dir/with/hd5/files
+```
+
+The general usage for the `HealpixSigFluxMap` is as follows:
+
 ```bash
 python HealpixSigFluxMap.py \
     -i /Users/rishi/Documents/Analysis/data/nncoutmaps \
