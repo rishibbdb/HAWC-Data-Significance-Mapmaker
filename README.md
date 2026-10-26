@@ -32,26 +32,6 @@ python HealpixSigFluxMap.py \
 - a directory plus `-b`;
 - a HAL map tree (`.root` or `.hd5`).
 
-## Pipeline script
-
-`pipeline-map-maker.py` is your
-`dark/1902/HAWC-ImageProcessing-3MLFit/pipeline-map-maker.py`, but it calls
-`HealpixSigFluxMap.py` instead of `pixi run aerie-apps-HealpixSigFluxMap`. It keeps
-the same settings: index 2.5, pivot 7, extension 0.5, window = ROI + 1, negative flux
-and significance allowed. It can run from any directory, as long as the two files stay
-together.
-
-```bash
-python pipeline-map-maker.py fits -d /Users/rishi/Documents/Analysis/data/nncoutmaps \
-    -b B4C0Ef B5C0Ef B6C0Ef B6C0Eg B7C0Eg \
-    --ra 83.63 --dec 22.01 --roi-x 2 --roi-y 2 \
-    --det-res /Users/rishi/Documents/Analysis/data/detRes-nn-pass5f_ML-refit.root \
-    -o out/ -M crab_map.fits.gz
-
-python pipeline-map-maker.py maptree -f residual_fit.hd5 -b B7C0Ej B8C0Ej \
-    --ra 45 --dec -15 --roi-x 5 --roi-y 5 --det-res response.root -o out/
-```
-
 ## From Python / threeML
 
 ```python
